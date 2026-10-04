@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Commonplace — a little space for ideas worth sharing.">
+  <title>Commonplace — Stories for slower mornings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Commonplace home"><span class="brand-mark">c.</span><span>commonplace</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#stories">Discover</a>
+      <a class="nav-link" href="#about">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-trigger" id="search-trigger" aria-label="Search stories"><span class="search-icon">⌕</span><span>Search</span></button>
+      <div id="account-actions"><button class="button button-dark button-small" data-action="open-auth">Sign in <span aria-hidden="true">↗</span></button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-line"></span> A journal for the curious</span>
+        <h1>Stories for<br>slower <em>mornings.</em></h1>
+        <p>A little space for ideas worth sharing, lessons worth keeping, and the lovely in-between.</p>
+        <a href="#stories" class="button button-dark">Find your next read <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-art" aria-label="A quiet still life with a cup of coffee and an open book" role="img">
+        <div class="sun-disc"></div><div class="art-window"></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+        <div class="book book-back"></div><div class="book book-front"><span>notes from<br>the quiet</span></div>
+        <div class="coffee"><span></span></div><div class="art-caption">NO. 01 &nbsp; · &nbsp; MAKE ROOM FOR WONDER</div>
+      </div>
+      <div class="hero-foot"><span>INDEPENDENT THOUGHTS, GENTLY SHARED</span><span>EST. FOR THE IN-BETWEEN</span></div>
+    </section>
+
+    <section class="stories-section" id="stories">
+      <div class="section-heading">
+        <div><span class="eyebrow"><span class="eyebrow-line"></span> The commonplace journal</span><h2>A good place to <em>begin.</em></h2></div>
+        <p>Thoughtful reads from people paying<br class="desktop-only"> attention to the world.</p>
+      </div>
+      <div class="stories-toolbar">
+        <div class="category-list" id="category-list" aria-label="Filter by topic">
+          <button class="category-chip selected" data-category="All stories">All stories</button>
+          <button class="category-chip" data-category="Life">Life</button>
+          <button class="category-chip" data-category="Culture">Culture</button>
+          <button class="category-chip" data-category="Creativity">Creativity</button>
+          <button class="category-chip" data-category="Notes">Notes</button>
+        </div>
+        <label class="search-box" id="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Find a story…" aria-label="Find a story"><button id="clear-search" aria-label="Clear search">×</button></label>
+      </div>
+      <div class="story-grid" id="story-grid" aria-live="polite"><div class="loading-state">Gathering a few good thoughts…</div></div>
+      <div class="empty-state hidden" id="empty-state"><span class="empty-ornament">✳</span><h3>No stories just yet.</h3><p>Be the first to leave a little something here.</p><button class="button button-outline" data-action="write">Write a story <span aria-hidden="true">↗</span></button></div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-spark">✳</div><span class="eyebrow">A small note from us</span>
+      <h2>Good things take<br><em>a little time.</em></h2>
+      <p>New thoughts, every now and then. No noise, just the good stuff.</p>
+      <button class="text-link" data-action="open-auth">Join the conversation <span>↗</span></button>
+      <div class="newsletter-stamp">A NOTE<br>WORTH<br>KEEPING</div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark">c.</span><span>commonplace</span></a><span>Made for the things that stay with you.</span><span>© 2025 Commonplace journal</span></footer>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-action="close-modal" aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
